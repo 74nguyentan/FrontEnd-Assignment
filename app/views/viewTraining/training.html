@@ -1,0 +1,94 @@
+<div ng-controller="ViewTrainingCtrl">
+  <div class="row">
+    <!-- content  -->
+    <div class="col-sm-9 mt-3 mr-3 mb-3 arbody">
+      <div class="row card asideHome" style="height: 437px;">
+        <div class="row col card-header">
+          <div class="col-4 my-auto" ng-show="inProgess">
+            <h5 class="ml-3"><i class="fas fa-clock">&nbsp; 10 : 5 : 59</i></h5>
+          </div>
+          <div class="col-4" ng-show="!inProgess"></div>
+
+          <div class="col-4">
+            <h3 style="text-align: center;">Review Test</h3>
+          </div>
+          <div class="col-4" ng-show="inProgess">
+            <button ng-click="reset()" class="btn btn-danger float-right">
+              Kết thúc Quiz
+            </button>
+          </div>
+          <div class="col-4" ng-show="!inProgess"></div>
+        </div>
+        <!-- card body -->
+        <div class="card-body pl-5" ng-show="inProgessStart">
+          <button ng-click="start()" class="btn btn-primary-gradient float-initial" style="margin-left: 330px;">
+            Start Quiz
+          </button>
+        </div>
+        <div class="card-body pl-5" ng-show="inProgessPoint">
+          Point :
+        </div>
+        <div class="card-body pl-5" ng-show="inProgess">
+          <h5 class="text-center">Lập trình hướng dối tượng với java</h5>
+          <p style="font-size: 18px; font-weight: 500;">
+            {{question}}
+          </p>
+          
+            <div class="form-check" ng-repeat="op in options">
+              <label class="form-check-label" for="radio">
+                <input type="radio" class="form-check-input"  name="answare" ng-model="answer" value="{{op.Id}}"  />
+                {{op.Text}} - - {{op.Id}}
+              </label>
+            </div>
+
+            <br />
+            <button type="submit" ng-click="checkAnswer()" class="btn btn-dark mr-4" style="float: right; width: 150px;">
+              Submit
+            </button>
+         
+        </div>
+        <!-- cart footer  -->
+        <div class="row card-footer" ng-show="inProgess">
+          <nav aria-label="..." class="mx-auto">
+            <ul class="pagination">
+              <li class="page-item" style="color: white;">
+                <a class="page-link" ng-click="firstQiz()"> First </a>
+              </li>
+              <li class="page-item" style="color: white;"><a class="page-link" ng-click="previousQiz()">
+                  << </a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" style="color: black;">{{countQiz}} / 10 </a>
+              </li>
+              <li class="page-item " style="color: white;"><a class="page-link " ng-click="nextQiz()"> >> </a></li>
+              <li class="page-item " style="color: white;">
+                <a class="page-link" ng-click="lastQiz()">
+                  Last
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Aside -->
+    <div class="col my-3 arAside">
+      <div class="card row asideHome">
+        <div class="row card-header" style="font-size: 20px; margin-bottom: -30px;">
+          <div class="col-6">
+            <i class="fa fa-book-reader">&nbsp;Môn Thi</i>
+          </div>
+          <div>
+            <a class="btn" ng-click="previous()">
+              <<</a> {{count}}/{{pageCount}} 
+              <a class="btn" ng-click="next()">>>
+            </a>
+          </div>
+        </div>
+        <ul class="list-group" ng-repeat="sub in list_subject | limitTo: pageSize : begin">
+          <li class="list-group-item">{{sub.Name}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

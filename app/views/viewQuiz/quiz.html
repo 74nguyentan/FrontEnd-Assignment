@@ -1,0 +1,85 @@
+<div ng-controller="ViewQuizCtrl">
+  <div class="row">
+    <!-- content  -->
+    <div class="col-sm-12 mt-3 mr-3 mb-3 arbody">
+      <div class="row card asideHome" style="height: 500px;">
+        <div class="row col pt-5 card-header ">
+
+          <div class="col-4 " ng-show="inProgess">
+            <h5 class="ml-3"><i class="fas fa-clock">&nbsp; {{time}}</i></h5>
+          </div>
+          <div class="col-4" ng-show="!inProgess"></div>
+
+          <div class="col-4 ">
+            <h3 style="text-align: center;">Online Test</h3>
+          </div>
+
+          <div class="col-4"></div>
+        </div>
+
+        <!-- card body -->
+        <!-- bat dau  -->
+        <div class="card-body pl-5" ng-show="inProgessStart">
+          <button ng-click="start()" class="btn btn-primary-gradient float-initial"
+            style="margin-left: 458px;width: 200px;">
+            Start Quiz
+          </button>
+        </div>
+        <!-- ket qua  -->
+        <div class="card-body pl-5" ng-show="inProgessPoint">
+          <h4> Result of Quiz</h4>
+          <div>
+            <h5 class="card-title"></h5>
+            <p class="card-text" ng-repeat="item in question().Answers">
+              <h3>Total of Questions: {{questions.length}}</h3>
+              <h3>Quiz Marks: {{quizMarks}}</h3>
+              <h3>Submit Time at: {{time}}</h3>
+            </p>
+            <a ng-href="#!/study" class="nav-link">
+              <- Take Another Quiz</a>
+          </div>
+        </div> 
+        <!-- lam quiz -->
+        <div class="card-body pl-5" ng-show="inProgess">
+
+          <p style="font-size: 16px; font-weight: 500;margin-left: 50px;">
+            {{question().Text}}
+          </p>
+
+          <div class="form-check " style="margin-left: 80px;" ng-repeat="item in question().Answers">
+            <label class="form-check-label" for="radio">
+              <input type="radio" ng-model="answer.choice" value="{{item.Id}}" name="answer" />
+              {{item.Text}}
+            </label>
+          </div>
+
+          <br />
+          <button type="submit" ng-click="submitQuiz()" class="btn btn-dark"
+            style="float: right;  width: 170px; margin-right: 120px;">
+            Kết thúc Quiz
+          </button>
+
+        </div>
+        <!-- cart footer  -->
+        <div class="row card-footer" ng-show="inProgess">
+          <nav aria-label="..." class="mx-auto">
+            <ul class="pagination">
+
+              <li class="page-item" style="color: white;width: 100px;text-align: center;">
+                <a class="page-link" ng-hide="currentQuestion == 0" ng-click="setQuestionIndex(currentQuestion - 1)">
+                  << </a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" style="color: black;">{{currentQuestion}} / {{questions.length}} </a>
+              </li>
+              <li class="page-item " style="color: white; width: 100px;text-align: center;"><a class="page-link "
+                  ng-click="setQuestionIndex(currentQuestion + 1)" ng-hide="currentQuestion == questions.length -1">
+                  &nbsp;>> </a></li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

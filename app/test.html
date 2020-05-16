@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- <style>
+   .liTab{
+     padding-left: 10px;
+     padding-right: 10px;
+    
+   }
+   .liTab:visited{
+     border: 2px solid black;
+     background-color: blue;
+    }
+ </style> -->
+  </head>
+  <!-- <body ng-app="myapp"> -->
+
+  <!-- ------------ -->
+  <!-- <div class="col-md-6">
+      <ul class="nav nav-tabs">
+          <li class=" active"><a class="liTab" data-toggle="tab" data-target="#Description">11</a></li>
+          <li ><a class="liTab" data-toggle="tab" data-target="#qualifications">22</a></li>
+      </ul>
+    
+      <div class="tab-content">
+          <div class="tab-pane  in active" id="Description">
+            <h2>Lorem</h2>
+          </div>
+          <div class="tab-pane fade" id="qualifications">
+            <h2>Ipsum</h2>
+          </div>
+          
+      </div> -->
+
+  <!--       
+      <form name="formm">
+        
+        <div class="form-group">
+          <label for="noidung">Nội dung :</label>
+         <input class="form-control" type="text" required name="noidung" id="noidung" ng-model="noidung"  placeholder="noi dung ...">
+          <small
+            id="helpId"
+            ng-show="formm.noidung.$invalid"
+            class="form-text text-muted"
+            >Không được để trống !</small
+          >
+        </div>
+      </form> -->
+
+  <!-- ------- -->
+  <!-- 
+    <form name="form">
+      <div class="form-group">
+        <label for="name">
+          Họ và tên:
+        </label>
+        <input
+          maxlength="25"
+          class="form-control"
+          ng-model="name"
+          name="name"
+          id="name"
+          required
+          type="text"
+          placeholder="Họ và tên"
+        />
+        <small
+          class="form-text text-muted"
+          ng-show="form.name.$invalid"
+        >
+          không được để trống họ và tên !</small
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Điểm:</label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            ng-model="point"
+            type="number"
+            required
+            min="0"
+            max="10"
+            name="point"
+            placeholder="Điểm"
+            aria-label="Recipient's "
+            aria-describedby="my-addon"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" id="my-addon">Điểm</span>
+          </div>
+        </div>
+        <small
+          class="form-text text-muted"
+          ng-show="form.point.$invalid"
+        >
+          thang điểm 10 !</small
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email"></label>
+        <input
+          type="email"
+          class="form-control"
+          required
+          id="email"
+          name="email"
+          ng-model="email"
+          aria-describedby="email"
+          placeholder="Email x@y.z"
+        />
+        <small
+          class="form-text text-muted"
+          ng-show="form.email.$invalid"
+          >email không hợp lệ!</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="platenumber"></label>
+        <input
+          type="text"
+          class="form-control"
+          name="platenumber"
+          id="platenumber"
+          ng-model="platenumber"
+          required
+          pattern="5\d-[A-Z]\d-((\d{4})|(\d{5}))"
+          aria-describedby="helpId"
+          placeholder="52-B1-4565"
+        />
+        <small
+          id="helpId"
+          ng-show="form.platenumber.$invalid"
+          class="form-text text-muted"
+          >phải là số xe sài gòn !</small
+        >
+      </div>
+    </form> -->
+
+  <!-- ---------  -->
+
+  <!-- <div class="col-md-4" ng-controller="myCtrl">
+              Result
+              <div class="radio">
+                  <label><input type="radio" name="rdoResult" ng-model="changedVal" value="pass" >pass</label>
+              </div>
+              <div class="radio">
+                  <label><input type="radio" name="rdoResult" ng-model="changedVal" value="fail5">fail</label>
+              </div>
+             aa: {{change}} <br>
+             ahn: {{changedVal}}
+          </div> -->
+
+  <!-- <script>
+    var app = angular.module('myapp',[])
+    .controller('myCtrl',["$scope",function($scope){
+         $scope.change='data';
+         $scope.getVal=function(){
+
+           console.log($scope.changedVal);
+           $scope.change=$scope.changedVal;
+           alert(change);
+         }
+       }]);
+
+</script> -->
+  <body>
+    <div class="container">
+      <form th:action="@{/staffs/find}" method="get">
+        <h1>List Staffs</h1>
+        <a
+          th:href="@{/staffs/add}"
+          class="btn btn-primary"
+          style="position: absolute; right: 20px; top: 10px; padding: 7px 20px;"
+          >Add Staff</a
+        >
+
+        <div
+          id="serch-depart"
+          style="position: absolute; right: 250px; top: 12px;"
+        >
+          <div class="form-inline">
+            <div class="input-group">
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder=" search"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                style="width: 280px;"
+              />
+              <div class="input-group-prepend">
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <table
+          class="table table-striped table-hover"
+         
+        >
+          <thead class="thead-dark">
+            <tr  style="text-align: center;">
+              <th scope="col" class="text-center">Staff Id</th>
+              <th scope="col"  class="">Name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Birth Day</th>
+              <th scope="col">Number phone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Level</th>
+              <th scope="col">Note</th>
+              <th scope="col">Photo</th>
+              <th scope="col">Department</th>
+              <th scope="col">&nbsp;</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Nguyen Van Tan</td>
+              <td>Nam</td>
+              <td>1997-02-25</td>
+              <td>0325772929</td>
+              <td>vantanb1k55@gmail.com</td>
+              <td>100000.0</td>
+              <td>1</td>
+              <td>nam nhan vien</td>
+              <td>
+                <img
+                  style="
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    height: 100px;
+                  "
+                  src="images/anh1.jpg"
+                />
+              </td>
+              <td>javascript</td>
+              <td>
+                <a
+                  th:href="@{'/staffs/edit/' + ${staff.id}}"
+                  class="btn btn-primary"
+                  >Edit</a
+                >
+                <br /><br />
+                <a
+                  th:href="@{'/staffs/delete/' + ${staff.id}}"
+                  class="btn btn-danger"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

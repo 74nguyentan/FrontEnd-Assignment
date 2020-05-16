@@ -1,0 +1,114 @@
+<div ng-controller="ViewStudyCtrl">
+  <div class="row">
+    <!-- content  -->
+    <div class="col-sm-9 mt-3 mr-3 mb-3 arbody">
+      <div class="row">
+        <div class="subjects-item float-left mr-3 mb-3 asideHome"
+          ng-repeat="sub in list_subject | limitTo: pageSize : begin">
+          <div class="subjects-item-image ml-3">
+            <img src="images/{{sub.Logo}}" class="img-responsive img-study" />
+          </div>
+          <div class="subjects-item-text">
+            <div class="subjects-item-text-main">
+              <div>
+                <div>{{sub.Name}}</div>
+                <div class="subjects-item-title-subtext">
+                  Test online - Chắc kiến thức, vững tương lai
+                </div>
+              </div>
+              <a class="btn btn-primary-gradient" ng-href="#!/quiz/{{sub.Id}}" role="button">test ngay</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <nav>
+            <ul class="pagination justify-content-center">
+              <li class="page-item" style="color: white;">
+                <a class="page-link" ng-click="first()"> First </a>
+              </li>
+              <li class="page-item" style="color: white;"><a class="page-link" ng-click="previous()">
+                  << </a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" style="color: black;">{{count}} / {{pageCount}} </a>
+              </li>
+              <li class="page-item " style="color: white;"><a class="page-link " ng-click="next()"> >> </a></li>
+              <li class="page-item " style="color: white;">
+                <a class="page-link" ng-click="last()">
+                  Last
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Aside -->
+    <div class="col my-3 arAside">
+      <div class="card row asideHome">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home"  role="tab"
+              aria-controls="nav-home" aria-selected="true" style="
+                color: white;
+                background-color: #202020;
+                border-bottom: solid 1px white;
+              ">
+              <i class="fas fa-edit"></i> Chuyên ngành
+            </a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false" style="
+                color: white;
+                background-color: #202020;
+                border-bottom: solid 1px white;
+                padding-left: 20px;
+              ">
+              <i class="fas fa-list"></i> Tài nguyên
+            </a>
+          </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <ul class="list-group">
+              <li class="list-group-item">CNTT - Lập trình NC</li>
+              <li class="list-group-item">CNTT - Đồ họa</li>
+              <li class="list-group-item">CNTT - Khoa học máy tính</li>
+              <li class="list-group-item">CNTT - Makerting online</li>
+              <li class="list-group-item">NN - Tiếng Anh</li>
+              <li class="list-group-item">NN - Tiếng Trung</li>
+              <li class="list-group-item">NN - Tiếng Pháp</li>
+              <li class="list-group-item">Du Lịch</li>
+              <li class="list-group-item">Khách Sạn</li>
+              <li class="list-group-item">PR sự kiện</li>
+              <li class="list-group-item">Khoa học công nghệ</li>
+              <li class="list-group-item">Kĩ thuật điện</li>
+            </ul>
+          </div>
+
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <ul class="list-group">
+              <li class="list-group-item">CNTT - Lập trình</li>
+              <li class="list-group-item">CNTT - Đồ họa</li>
+              <li class="list-group-item">CNTT - Khoa học máy tính</li>
+              <li class="list-group-item">CNTT - Makerting online</li>
+              <li class="list-group-item">NN - Tiếng Anh</li>
+              <li class="list-group-item">NN - Tiếng Trung</li>
+              <li class="list-group-item">NN - Tiếng Pháp</li>
+              <li class="list-group-item">Du Lịch</li>
+              <li class="list-group-item">Khách Sạn</li>
+              <li class="list-group-item">PR sự kiện</li>
+              <li class="list-group-item">Khoa học công nghệ</li>
+              <li class="list-group-item">Kĩ thuật điện</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="card row asideHome mt-3" style="height: 368px;"></div> -->
+    </div>
+  </div>
+</div>

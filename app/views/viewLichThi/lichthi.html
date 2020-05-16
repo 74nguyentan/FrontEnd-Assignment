@@ -1,0 +1,50 @@
+<div ng-controller="ViewLichThiCtrl">
+<div class="row">
+  <!-- content -->
+  <div class="col mt-3  mb-3 asideHome">
+    <div class="row pl-3 mt-3">
+      <div class="form-group">
+        <label for="">Thời gian :</label>
+        <select  class="form-control">
+          <option  value="">7 ngày tới</option>
+          <option value=""> 30 ngày tới</option>
+          <option value=""> 60 ngày tới</option>
+          <option value=""> 90 ngày tới</option>
+          <option value=""> 90 ngày trước</option>
+          <option value=""> 60 ngày trước</option>
+          <option value=""> 30 ngày trước</option>
+          <option value=""> 7 ngày trước</option>
+        </select>
+        <small id="helpId" class="form-text text-muted">Chọn thời gian để hiển thị lịch thi của bạn !</small>
+      </div>
+    </div>
+    <div class="row p-3">
+      <table class="table  table-hover table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col">NGÀY</th>
+            <th scope="col">PHÒNG</th>
+            <th scope="col">MÃ MÔN</th>
+            <th scope="col">MÔN</th>
+            <th scope="col">GV</th>
+            <th scope="col">T.GIAN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="lt in listLichThi">
+            <th scope="row">{{lt.stt}}</th>
+            <td>{{lt.ngay}}</td>
+            <td>{{lt.phong}}</td>
+            <td>{{lt.id}}</td>
+            <td>{{lt.mon}}</td>
+            <td>{{lt.gv}}</td>
+            <td>{{lt.time}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+ </div>
+</div>
+</div>

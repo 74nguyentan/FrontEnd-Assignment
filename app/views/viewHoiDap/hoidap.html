@@ -1,0 +1,150 @@
+<div ng-controller="ViewHoiDapCtrl">
+<div class="row">
+  <!-- content -->
+  <div class="col-sm-9 mt-3 mr-3 mb-3 arbody">
+    <div class="row">
+      <div class="asideHome p-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html">FPT Question</a>
+          </li>
+          <li class="breadcrumb-item active">Hỏi đáp</li>
+        </ol>
+        <img class="img-fluid rounded" src="/images/aaaa.png" alt="" />
+
+        <hr />
+
+        <!-- Date/Time -->
+        <p>Posted on January 1, 2019 at 12:00 PM</p>
+
+        <hr />
+
+        <!-- Post Content -->
+        <p class="lead">
+          Với sự phát triển của công nghệ hiện đại như hiện nay, một số
+          phương pháp học tập và giải trí truyền thống đã bị thay đổi. Để
+          phù hợp với xu thế hiện đại, một loại hình thức học tập rất được
+          ưa chuộng, đó là "học trực tuyến".
+        </p>
+
+        <p>
+          1. Tiết kiệm thời gian và chi phí đi lại Đây có lẽ là lợi ích rõ
+          ràng và hiển nhiên nhất. Bạn sẽ không mất thời gian và công sức di
+          chuyển tới địa điểm học, các lớp học online cho phép bạn học ngay
+          tại nhà, hay bất cứ nơi đâu bạn muốn, chỉ cần bạn có máy tính kết
+          nối internet. Bạn sẽ không phải mệt mỏi vì tắc đường, không cần lo
+          lắng giao thông hỗn loạn. Quả là rất tuyệt đúng không?
+        </p>
+        <p></p>
+        <p>
+          2. Không gian học tập thoải mái Có lớp học nào khiến bạn cảm thấy
+          thoải mái như ở nhà không? Nếu câu trả lời là “không” thì hẳn là
+          bạn chưa từng tham gia lớp học trực tuyến rồi. Bởi vì khi học
+          online bạn hoàn toàn có thể mang cả lớp học về nhà mình. Bạn học
+          ngay tại nhà, bên góc học tập thân yêu của bạn hay thậm chí là
+          trên ghế sofa êm ái mà bạn yêu thích. Chỉ nghĩ đến thôi đã thấy
+          rất dễ chịu rồi đúng không? Không gian học tập thoải mái sẽ giúp
+          bạn học tập tốt hơn.
+        </p>
+        <div class="card my-4" style="background-color: #282828;">
+          <h5 class="card-header">Bình luận:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Single Comment -->
+        <div class="media mb-4">
+          <img
+            class="d-flex mr-3 rounded-circle"
+            src="http://placehold.it/50x50"
+            alt=""
+          />
+          <div class="media-body">
+            <h5 class="mt-0">Người dấu tên 1</h5>
+            Thật tuyệt
+          </div>
+        </div>
+
+        <!-- Comment with nested comments -->
+        <div class="media mb-4">
+          <img
+            class="d-flex mr-3 rounded-circle"
+            src="http://placehold.it/50x50"
+            alt=""
+          />
+          <div class="media-body">
+            <h5 class="mt-0">Người dấu tên 2</h5>
+            Nghe nói sắp thi online ^^
+            <div class="media mt-4">
+              <img
+                class="d-flex mr-3 rounded-circle"
+                src="http://placehold.it/50x50"
+                alt=""
+              />
+              <div class="media-body">
+                <h5 class="mt-0">Người dấu tên 3</h5>
+                Học kì này xem như bỏ
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img
+                class="d-flex mr-3 rounded-circle"
+                src="http://placehold.it/50x50"
+                alt=""
+              />
+              <div class="media-body">
+                <h5 class="mt-0">Người dấu tên 4</h5>
+                Học lại thật rồi :v
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Aside -->
+  <div class="col my-3 arAside">
+    <div class="card row asideHome">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <img
+              src="/images/ong.png"
+              class="img-fluid"
+            />
+          </div>
+          <ul class="col-7 pt-4 li-asideHome">
+            <li><a href="#">Ong vàng</a></li>
+            <li><a href="#">Hỏi đáp</a></li>
+            <li><a href="#">Thông thái</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row card mt-3 asideHome">
+      <div class="card-body">
+        <input class="form-control" type="text" placeholder="Tìm kiếm" />
+      </div>
+    </div>
+    <div class="card row mt-3 asideHome">
+      <div class="text-center mt-3 pb-2">
+        <h5>Chuyên đề hỏi đáp <i class="fas fa-question"></i></h5>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">Học bổng</li>
+        <li class="list-group-item">Học tập</li>
+        <li class="list-group-item">Sự kiện</li>
+        <li class="list-group-item">Giải trí</li>
+        <li class="list-group-item">Tuyển sinh</li>
+        <li class="list-group-item">Đố vui</li>
+      </ul>
+    </div>
+  </div>
+</div></div>

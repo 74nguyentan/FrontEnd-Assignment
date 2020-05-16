@@ -1,0 +1,91 @@
+<div ng-controller="ViewGopYCtrl">
+  <div class="row">
+    <!-- content -->
+    <div class="col-sm-9 mt-3 mr-3 mb-3 asideHome">
+      <div class="row justify-content-center">
+        <h5 class="m-4">Ong vàng góp ý - nâng cao chất lượng học tập</h5>
+        <img src="/images/ong.png" class="img-fluid" style="width: 50px;" />
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <form name="form">
+            <div class="row">
+              <div class="form-group col-6">
+                <label for="chude">Chủ đề :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  name="chude"
+                  id="chude"
+                  ng-model="chude"
+                  placeholder="Học tập, thi online, ..."
+                />
+                <small
+                  ng-show="form.chude.$invalid"
+                  class="form-text text-muted"
+                  >Không được để trống !</small
+                >
+              </div>
+              <div class="form-group col-6">
+                <label for="my-input">Cơ sở :</label>
+                <select  class="form-control">
+                  <option  value=""> Hà Nội</option>
+                  <option value=""> Đà Nẵng</option>
+                  <option value=""> Tây Nguyên</option>
+                  <option value=""> Cần Thơ</option>
+                  <option value=""> HCM</option>
+                </select>
+                
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="my-textarea">Nội dung :</label>
+              <textarea
+                id="my-textarea"
+                class="form-control"
+                required
+                name="noidung"
+                id="noidung"
+                ng-model="noidung"
+                rows="3"
+                placeholder="Nhập nội dung ..."
+              ></textarea>
+              <small
+                id="helpId"
+                ng-show="form.noidung.$invalid"
+                class="form-text text-muted"
+                >Không được để trống !</small
+              >
+            </div>
+          </form>
+          <div class="form-group">
+            <input
+              style="width: 150px; float: right;"
+              class="btn btn-dark"
+              type="submit"
+              value="Post"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Aside -->
+    <div class="col my-3 arAside">
+      <div class="card row asideHome">
+        <div class="text-center mt-3 pb-2">
+          <h5>Góc ong poly</h5>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">Học bổng</li>
+          <li class="list-group-item">Học tập</li>
+          <li class="list-group-item">Sự kiện</li>
+          <li class="list-group-item">Giải trí</li>
+          <li class="list-group-item">Tuyển sinh</li>
+          <li class="list-group-item">Đố vui</li>
+          <li class="list-group-item">Sách hay</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
