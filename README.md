@@ -1,4 +1,6 @@
-<!-- run : npm start -->
+run : 
+npm install 
+npm start 
 
 # `angular-seed` — the seed for AngularJS apps
 
